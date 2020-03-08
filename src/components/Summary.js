@@ -54,7 +54,12 @@ const Summary = () => {
 							{!summaryData.isLoading && (
 								<>
 									<h5 className='card-title text-light text-center'>Recovered</h5>
-									<h2 className='card-title text-light text-center'>{summaryData.data.recovered.value}</h2>
+									<h2 className='card-title text-light text-center'>
+										{summaryData.data.recovered.value}{' '}
+										<span className='h6'>
+											({((summaryData.data.recovered.value / summaryData.data.confirmed.value) * 100).toFixed(2)}%)
+										</span>
+									</h2>
 									<div className='mx-auto text-center'>
 										<Link to='/recovered' className='btn btn-outline-light '>
 											Detail
@@ -71,7 +76,12 @@ const Summary = () => {
 							{!summaryData.isLoading && (
 								<>
 									<h5 className='card-title text-light text-center'>Deaths</h5>
-									<h2 className='card-title text-light text-center'>{summaryData.data.deaths.value}</h2>
+									<h2 className='card-title text-light text-center'>
+										{summaryData.data.deaths.value}{' '}
+										<span className='h6'>
+											({((summaryData.data.deaths.value / summaryData.data.confirmed.value) * 100).toFixed(2)}%)
+										</span>
+									</h2>
 									<div className='mx-auto text-center'>
 										<Link to='/deaths' className='btn btn-outline-light '>
 											Detail
