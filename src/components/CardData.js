@@ -5,7 +5,7 @@ export const CardData = ({ data, type = null }) => {
 	return (
 		<div className='col-sm-4 my-2'>
 			<div className='card mx-auto' style={{ width: '18rem' }}>
-				<div className='card-body'>
+				<div className='card-body text-center'>
 					<h5 className='card-title text-center'>{data.countryRegion}</h5>
 					<h5 className='card-title text-center'>{data.provinceState === null ? '-' : data.provinceState}</h5>
 
@@ -34,6 +34,13 @@ export const CardData = ({ data, type = null }) => {
 							</p>
 						</>
 					) : null}
+					<a
+						href={`https://maps.google.com/?q=${data.lat},${data.long}`}
+						target='blank'
+						rel='noopener noreferrer'
+						className='btn btn-outline-primary btn-sm text-center'>
+						Show Map
+					</a>
 				</div>
 			</div>
 		</div>
